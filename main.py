@@ -9,15 +9,17 @@ def main():
     def choose_option():
         censor_option = input("Please type the corresponding number to your preferred option above. \n")
 
-        if censor_option != "1" or censor_option != "2" or censor_option != "3":
-            choose_option()
+        if censor_option == "1" or censor_option == "2" or censor_option == "3":
+            correct_option = input("You selected " + censor_option + ". " +
+                                   "Is that correct? Type Y for yes, and N for No \n")
 
-        correct_option = input("You selected" + censor_option + ". " + "Is that correct? Type Y for yes, and N for No")
+            if correct_option.upper() == "N" or (correct_option.upper() != "Y" and correct_option.upper() != "N"):
+                choose_option()
 
-        if correct_option.upper() == "N" or (correct_option.upper() != "Y" and correct_option.upper() != "N"):
-            choose_option()
+            return censor_option
 
-        return censor_option
+        else:
+            censor_option = choose_option()
 
     user_choice = choose_option()
 
