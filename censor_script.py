@@ -1,7 +1,6 @@
 from better_profanity import profanity
 
 
-
 def replace_with_asterisk(text_file):
     """
     Uses the better-profanity package to replace each instance of each word with asterisks and then makes a new file
